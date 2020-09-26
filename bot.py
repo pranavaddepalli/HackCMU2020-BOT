@@ -1,8 +1,10 @@
-import discord, requests, asyncio
+import discord, requests, asyncio, os
+from dotenv import load_dotenv
 
 client = discord.Client()
+load_dotenv('.env')
 
-token = 'NzU5MTkyMzcwOTUxNzQ5NjUy.X256_g.AOEupOPJTJqy4dScJyLZHgM-Gww'
+#token = 'NzU5MTkyMzcwOTUxNzQ5NjUy.X256_g.2bdu08Gm4x79cex3P2b-rQx8Xrg'
 
 @client.event
 async def on_ready():
@@ -20,4 +22,4 @@ async def on_message(message):
         watchLink = f'https://youtube-party-bot.herokuapp.com/api/{vidID}'
         await message.channel.send('Happy watching! ' +  watchLink)
 
-client.run(token)
+client.run(os.getenv('BOT_TOKEN'))
