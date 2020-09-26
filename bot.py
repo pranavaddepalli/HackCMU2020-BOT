@@ -18,4 +18,4 @@ async def on_message(message):
         watchLink = f'https://youtube-party-bot.herokuapp.com/api/{vidID}'
         await message.channel.send('Happy watching! ' +  watchLink)
 
-client.run(os.environ('BOT_TOKEN'))
+client.run(os.environ['BOT_TOKEN'])
