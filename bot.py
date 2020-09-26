@@ -22,7 +22,9 @@ async def on_message(message):
     if not message.content.startswith('!watch'):
         otherMessages = message.content
         otherMessages = otherMessages.replace(' ', '%20')
-        r = requests.post(f'https://cmu-spectre.herokuapp.com/discordmsg/{otherMessages}', data = {"user":str(message.author)})
+        concat = otherMessages+'1differentiator1'+str(message.author)
+        r = requests.post(f'https://cmu-spectre.herokuapp.com/discordmsg/{concat}')
+        #r = requests.post(f'https://cmu-spectre.herokuapp.com/discordmsg/{otherMessages}', data = {"user":str(message.author)})
         print(r.url, message.content)
 
 client.run(os.environ['BOT_TOKEN'])
