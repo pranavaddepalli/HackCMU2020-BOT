@@ -1,4 +1,4 @@
-import discord
+import discord, requests
 
 client = discord.Client()
 
@@ -14,8 +14,9 @@ async def on_message(message):
         return
 
     if message.content.startswith('!watch'):
-        roomCode = message.content[7:]
-        watchLink = f'https://vynchronize.herokuapp.com/{roomCode}' #link for synchronous video watching
-        await message.channel.send(f'@{message.author} ' +  watchLink)
+        vidURL = message.content[7:]
+        vidID = vidURL[vidURL.index('=')+1:]
+        watchLink = f'https://youtube-party-bot.herokuapp.com/api/{vidID}'
+        await message.channel.send('Happy watching! ' +  watchLink)
 
 client.run(token)
