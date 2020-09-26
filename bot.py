@@ -15,7 +15,7 @@ async def on_message(message):
         await message.edit(suppress=True)
         vidURL = message.content[7:]
         vidID = vidURL[vidURL.index('=')+1:]
-        watchLink = f'https://youtube-party-bot.herokuapp.com/api/{vidID}'
+        watchLink = f'https://cmu-spectre.herokuapp.com/api/{vidID}'
         botmessage = await message.channel.send('Happy watching! ' +  watchLink)
         await botmessage.edit(suppress=True)
 
