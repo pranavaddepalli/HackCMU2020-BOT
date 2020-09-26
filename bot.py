@@ -21,6 +21,7 @@ async def on_message(message):
 
     if not message.content.startswith('!watch'):
         otherMessages = message.content
+        otherMessages = otherMessages.replace(' ', '%20')
         r = requests.post('https://cmu-spectre.herokuapp.com/', otherMessages)
         print(r.url, message.content)
 
