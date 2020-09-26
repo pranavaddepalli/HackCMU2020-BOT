@@ -1,4 +1,4 @@
-import discord, requests
+import discord, requests, asyncio
 
 client = discord.Client()
 
@@ -14,6 +14,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('!watch'):
+        await message.edit(suppress=True)
         vidURL = message.content[7:]
         vidID = vidURL[vidURL.index('=')+1:]
         watchLink = f'https://youtube-party-bot.herokuapp.com/api/{vidID}'
