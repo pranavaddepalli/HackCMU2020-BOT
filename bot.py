@@ -2,8 +2,7 @@ import discord
 
 client = discord.Client()
 
-watchLink = '' #link for synchronous video watching
-
+token = '[TOKEN HERE]'
 
 @client.event
 async def on_ready():
@@ -15,6 +14,8 @@ async def on_message(message):
         return
 
     if message.content.startswith('!watch'):
-        await message.channel.send(f'@{message.author}' +  watchLink)
+        roomCode = message.content[7:]
+        watchLink = f'https://vynchronize.herokuapp.com/{roomCode}' #link for synchronous video watching
+        await message.channel.send(f'@{message.author} ' +  watchLink)
 
-client.run('[ENTER TOKEN HERE]')
+client.run(token)
