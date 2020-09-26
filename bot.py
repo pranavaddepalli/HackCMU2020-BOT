@@ -17,4 +17,4 @@ async def on_message(message):
     if message.content.startswith('!cactus jack sent me'):
         await message.channel.send(f'@{message.author}' +  watchLink)
 
-client.run('NzU5MTkyMzcwOTUxNzQ5NjUy.X256_g.cFOE6R18zmWhUdadxB-GBY4HrLg')
+client.run('[ENTER TOKEN HERE]')
