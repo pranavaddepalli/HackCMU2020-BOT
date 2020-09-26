@@ -19,5 +19,4 @@ async def on_message(message):
         botmessage = await message.channel.send('Happy watching! ' +  watchLink)
         await botmessage.edit(suppress=True)
 
-#client.run(os.environ['BOT_TOKEN'])
-client.run('NzU5MTkyMzcwOTUxNzQ5NjUy.X256_g.z-tmYdLSEFQ8hgeBTGpQw4N8WJw')
+client.run(os.environ['BOT_TOKEN'])
